@@ -1,0 +1,37 @@
+﻿@using Entity;
+@model List<User>
+
+<form>
+     <div class="d-grid gap-2 col-6 mx-auto">
+  <button type="submit" asp-asp-controller="Home" asp-action="Enkaz" class="btn btn-danger btn-lg">Ben veya tanıdığım enkaz Altında</button>
+
+   <button type="submit" asp-asp-controller="Home" asp-action="Gida" class="btn btn-warning btn-lg">Gıdaya ihtiyacım var</button>
+
+   <button type="submit" asp-asp-controller="Home" asp-action="Diger" class="btn btn-primary btn-lg">Diğer ihtiyaçlar</button>
+      </div>
+</form>
+<hr />
+ <table class="table-details">
+        <thead>
+        <tr>
+            <td>İsim</td>
+            <td>Telefon numarası</td>
+            <td>Adres</td>
+            <td>İhtiyaç</td>
+            
+        </tr>
+        </thead>
+        <hr />
+        <br />
+        <tbody>
+            @foreach (var item in Model)
+        {
+            <tr>
+            <td>@item.Name</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.Adress</td>
+            <td>@item.Need</td>
+        </tr>
+        }
+       </tbody>
+</table>

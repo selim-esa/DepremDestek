@@ -1,0 +1,43 @@
+﻿@using Entity;
+@model User
+
+
+    <form asp-controller="Home" asp-action="Gida" method="post">
+<div class="mb-3">
+  <label class="form-label">İsim Soyisim</label>
+  <input type="text" class="form-control" asp-for="Name" id="exampleFormControlInput1">
+</div>
+    <div class="mb-3">
+        <label class="form-label">Telefon numarası</label>
+            <input type="text" class="form-control" asp-for="PhoneNumber" id="exampleFormControlInput1">
+    </div>
+    <label class="form-label">İl</label>
+
+        <select class="form-select" asp-for="City" aria-label="Default select example">
+
+        <option selected>İl seçin</option>
+        <option value="Hatay">Hatay</option>
+        <option value="Adana">Adana</option>
+        <option value="Adıyaman">Adıyaman</option>
+        <option value="Kahramanmaraş">Kahramanmaraş</option>
+        <option value="Malatya">Malatya</option>
+        <option value="Gaziantep">Gaziantep</option>
+        <option value="Şanlıurfa">Şanlıurfa</option>
+        <option value="Diyarbakır">Diyarbakır</option>
+    </select>
+
+    <div class="mb-3">
+        <label class="form-label">İlçe</label>
+            <input type="text" asp-for="District" class="form-control">
+    </div>
+        <div class="mb-3">
+            <label class="form-label">Yardım Tipi</label>
+            <input type="text" asp-for="Need" class="form-control" placeholder="Gıda">
+        </div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Adres Bilgileri</label>
+            <textarea class="form-control" asp-for="Adress" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <button type="submit" asp-controller="Home" asp-action="Gida" class="btn btn-primary btn-lg">Gıda Yardımı iste</button>
+    </form>
